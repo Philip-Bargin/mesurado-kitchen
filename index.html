@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesurado WordPress Guide</title>
+<meta name="description" content="A step-by-step, beginner-friendly course for rebuilding the Mesurado Kitchen &amp; Palm Bar website in WordPress using only free tools.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to lesson content</a>
+
+<header class="topbar">
+  <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open course navigation">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <a class="brand" href="#/">
+    <span class="brand__mark" aria-hidden="true">WP</span>
+    <span class="brand__text">
+      <strong>WordPress Final Project Guide</strong>
+      <small>Rebuild Mesurado Kitchen &amp; Palm Bar with free tools</small>
+    </span>
+  </a>
+  <div class="topbar__progress" aria-live="polite">
+    <div class="meter" role="progressbar" aria-label="Overall course progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="topMeter"><span></span></div>
+    <span class="topbar__pct" id="topPct">0%</span>
+  </div>
+  <form class="search" id="searchForm" role="search" action="#/search">
+    <label class="sr" for="searchInput">Search the course</label>
+    <input id="searchInput" type="search" placeholder="Search lessons, settings, problems…" autocomplete="off">
+  </form>
+  <button class="icon-btn" id="printBtn" type="button" aria-label="Print or save this page as PDF" title="Print / Save as PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+  </button>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Course navigation">
+    <div class="sidebar__stats" id="sideStats"></div>
+    <ul class="sidebar__links">
+      <li><a href="#/" data-route="home">Course overview</a></li>
+      <li><a href="#/blueprint" data-route="blueprint">Website blueprint</a></li>
+      <li><a href="#/assets" data-route="assets">Project Asset Library</a></li>
+      <li><a href="#/content" data-route="content">Project Content Library</a></li>
+      <li><a href="#/troubleshooting" data-route="troubleshooting">Troubleshooting</a></li>
+      <li><a href="#/rubric" data-route="rubric">Rubric &amp; final checklist</a></li>
+    </ul>
+    <div class="sidebar__modules" id="moduleNav"></div>
+    <div class="sidebar__foot">
+      <button type="button" class="link-btn" id="expandAll">Expand all</button>
+      <button type="button" class="link-btn" id="collapseAll">Collapse all</button>
+      <button type="button" class="link-btn danger" id="resetBtn">Reset progress</button>
+    </div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <noscript><p class="callout callout--warn">This guide needs JavaScript turned on to show its lessons.</p></noscript>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data/project.js"></script>
+<script src="data/assets.js"></script>
+<script src="data/content.js"></script>
+<script src="data/lessons-01-05.js"></script>
+<script src="data/lessons-06-09.js"></script>
+<script src="data/lessons-10.js"></script>
+<script src="data/lessons-11.js"></script>
+<script src="data/lessons-12-16.js"></script>
+<script src="data/troubleshooting.js"></script>
+<script src="data/blueprint.js"></script>
+<script src="data/rubric.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
