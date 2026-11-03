@@ -4,7 +4,7 @@
    written for the project. Edit here once and the Content Library and lessons update. */
 window.GUIDE = window.GUIDE || {};
 GUIDE.project = {
-  referenceUrl: 'https://claude.ai/artifact/G6vC3teatgeyNBEVwnd27V',
+  referenceUrl: 'https://mesurado-kitchen-app.vercel.app/',
   name: 'Mesurado Kitchen & Palm Bar',
   tagline: 'Liberian cooking by the river, served slowly',
   info: {

@@ -72,7 +72,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: 'cta.default' }
     ],
-    visual: [{ diagram: 'page-hero', caption: 'MK Page Hero: Cover block (image + 62 % overlay) with a 1240 px content group at the bottom left.' }, { diagram: 'cta-band', caption: 'MK Reservation Band: centred dark band with two buttons and a phone line.' }],
+    visual: [{ diagram: 'page-hero', img: 'Reusable Page Hero.png', caption: 'MK Page Hero: Cover block (image + 62 % overlay) with a 1240 px content group at the bottom left.' }, { diagram: 'cta-band', img: 'Reusable Call-to-Action Band.png', caption: 'MK Reservation Band: centred dark band with two buttons and a phone line.' }],
     resources: { assets: ['page-hero-terrace-night'], content: ['hero.our-philosophy', 'cta.default'], values: [['Hero minimum height', '360 px'], ['Overlay', '{{hex:#0e1e16}} 62 %'], ['Hero inner padding', '96 top · 64 bottom · 32 sides'], ['Band padding', '64 px top and bottom']] },
     expected: '**My patterns** now also lists MK Page Hero, MK Split Hero and MK Reservation Band. Our Philosophy has its hero; Our Story has a split hero and a band at the bottom.',
     troubleshoot: ['pattern-synced-by-mistake', 'cover-text-dark'],
@@ -101,7 +101,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       { content: 'story.more' },
       ctaSteps()
     ],
-    visual: [{ diagram: 'wire-story', caption: 'Our Story page, top to bottom.' }],
+    visual: [{ diagram: 'wire-story', img: 'm11-l02-wire-story.png', caption: 'Our Story page, top to bottom.' }],
     resources: { assets: ['terrace-portrait', 'river', 'kitchen-pots', 'palm-wine-gourds', 'market', 'team-group'], content: ['hero.our-story', 'story.began', 'story.kitchen', 'story.bar', 'story.more', 'cta.default'] },
     expected: 'Our Story matches the reference: split hero, three alternating photo sections (left, right, left), two link cards and the dark reservation band.',
     troubleshoot: ['spacing-wrong', 'card-images-different-heights'],
@@ -135,7 +135,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ctaSteps('phil.cta'),
       { content: 'phil.cta' }
     ],
-    visual: [{ diagram: 'wire-philosophy', caption: 'Our Philosophy page, top to bottom.' }],
+    visual: [{ diagram: 'wire-philosophy', img: 'm11-l03-wire-philosophy.png', caption: 'Our Philosophy page, top to bottom.' }],
     resources: { assets: ['page-hero-terrace-night', 'market'], content: ['hero.our-philosophy', 'phil.quote', 'phil.principlesHead', 'phil.principles', 'phil.market', 'phil.cta'] },
     expected: 'The page shows the hero, a narrow quote section, four principle cards with gold icons, the market split and a band reading “Taste it for yourself”.',
     troubleshoot: ['info-box-pro', 'grid-not-responsive'],
@@ -166,7 +166,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       ctaSteps()
     ],
-    visual: [{ diagram: 'wire-team', caption: 'Our Team page, top to bottom.' }],
+    visual: [{ diagram: 'wire-team', img: 'm11-l04-wire-team.png', caption: 'Our Team page, top to bottom.' }],
     resources: { assets: ['page-hero-terrace-night', 'team-musu', 'team-emmanuel', 'team-jallah', 'team-patience', 'team-meal'], content: ['hero.our-team', 'team.head', 'team.p1', 'team.p2', 'team.p3', 'team.p4', 'team.join', 'cta.default'] },
     expected: 'Four portrait cards in a row (two on tablets, one on phones), the Join split, three testimonials and the band.',
     checklist: ['Hero texts correct.', 'Four team cards with portrait photos, roles, names and bios.', 'Join split with team-meal photo and Get in Touch button.', 'Testimonials copied from Home.', 'Reservation band at the bottom.'] },
@@ -200,7 +200,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ctaSteps('menu.cta'),
       { content: 'menu.cta' }
     ],
-    visual: [{ diagram: 'wire-menu', caption: 'Menu page: hero, tabs with dish card grids, allergy section, band.' }],
+    visual: [{ diagram: 'wire-menu', img: 'm11-l05-wire-menu.png', caption: 'Menu page: hero, tabs with dish card grids, allergy section, band.' }],
     resources: { assets: ['page-hero-dishes'].concat(P.menu.map(function (m) { return 'dish-' + m[0]; })), content: ['hero.menu', 'menu.note', 'menu.allergy', 'menu.cta'] },
     expected: 'Six working tabs; each shows its dishes as cards with photo, name, price, description, tags and allergens. Below: the allergy section and a band with an Order Online button.',
     troubleshoot: ['tabs-not-switching', 'grid-not-responsive', 'card-images-different-heights'],
@@ -224,7 +224,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       { content: ['res.notice', 'res.side', 'res.large'] },
       { callout: 'info', title: 'Why no live calendar?', text: 'The reference shows a 5-step booking flow with live availability. That needs a paid booking service or a backend. Your free version sends a **reservation request** with date, time and party size, which the restaurant confirms. This is an accepted, documented difference (see the [Blueprint](#/blueprint)).' }
     ],
-    visual: [{ diagram: 'wire-reservations', caption: 'Reservations page: hero, notice, form panel (left) and sidebar (right).' }],
+    visual: [{ diagram: 'wire-reservations', img: 'm11-l06-wire-reservations.png', caption: 'Reservations page: hero, notice, form panel (left) and sidebar (right).' }],
     resources: { assets: ['page-hero-river-table'], content: ['hero.reservations', 'res.notice', 'res.side'] },
     expected: 'Reservations shows the hero, a blue notice, a white form panel with a placeholder line, and the Good to know sidebar.',
     checklist: ['Hero texts correct.', 'Notice is visible above the panels.', 'Main panel (2/3) with H4 heading and placeholder.', 'Sidebar (1/3) with three info rows.'] },
@@ -251,7 +251,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       { content: 'order.popularHead' },
       { callout: 'info', title: 'Pickup or delivery is chosen at checkout', text: 'In the reference you pick pickup or delivery on this page. In WooCommerce the customer chooses it on the checkout page (pickup free, delivery US$ 3). The boxes here explain the two options.' }
     ],
-    visual: [{ diagram: 'wire-order', caption: 'Order Online: hero, two option cards with buttons, popular products.' }],
+    visual: [{ diagram: 'wire-order', img: 'm11-l07-wire-order.png', caption: 'Order Online: hero, two option cards with buttons, popular products.' }],
     resources: { assets: ['page-hero-dishes'], content: ['hero.order-online', 'order.choose', 'order.popularHead'] },
     expected: 'The page explains Pickup and Delivery and the Start Your Order button opens the (still empty) Shop page.',
     checklist: ['Hero texts correct.', 'Pickup and Delivery cards with correct texts.', 'Start Your Order → /shop/; View Full Menu → /menu/.', 'Popular section with a placeholder line.'] },
@@ -295,7 +295,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: ['pd.faqHead', 'pd.faq1', 'pd.faq2', 'pd.faq3', 'pd.faq4'] }
     ],
-    visual: [{ diagram: 'wire-private', caption: 'Private Dining page, top to bottom.' }],
+    visual: [{ diagram: 'wire-private', img: 'm11-l08-wire-private.png', caption: 'Private Dining page, top to bottom.' }],
     resources: { assets: ['river-room-portrait', 'river-room', 'hero-palm-bar', 'dining-room-full', 'pd-candlelit', 'pd-sunset-guests', 'pd-set-menu', 'pd-cake'] },
     expected: 'All six sections present. “Make an Inquiry” jumps to the inquiry area. FAQ questions open and close; the first is open when the page loads.',
     troubleshoot: ['anchor-not-jumping', 'info-box-pro'],
@@ -336,7 +336,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: ['cat.faqHead', 'cat.faq1', 'cat.faq2', 'cat.faq3', 'cat.faq4'] }
     ],
-    visual: [{ diagram: 'wire-catering', caption: 'Catering page, top to bottom.' }],
+    visual: [{ diagram: 'wire-catering', img: 'm11-l09-wire-catering.png', caption: 'Catering page, top to bottom.' }],
     resources: { assets: ['catering-buffet', 'catering-office', 'catering-wedding', 'catering-family'] },
     expected: 'Catering matches the reference structure; “Request a Quote” jumps to the quote section.',
     troubleshoot: ['anchor-not-jumping'],
@@ -377,7 +377,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: ['hero.journal', 'j.head'] }
     ],
-    visual: [{ diagram: 'query-loop', caption: 'How a Query Loop works: settings pick the posts; the Post Template repeats for each post.' }],
+    visual: [{ diagram: 'query-loop', img: 'm11-l10-query-loop.png', caption: 'How a Query Loop works: settings pick the posts; the Post Template repeats for each post.' }],
     resources: { assets: ['page-hero-cocktail-river'].concat(P.articles.map(function (a) { return 'journal-' + a[0]; })), content: ['j.body', 'hero.journal', 'j.head'] },
     expected: 'Eight published posts. The Journal page shows “Welcome to Mesurado Kitchen & Palm Bar” as the featured story, then a grid of the next six posts and a link to the next page.',
     troubleshoot: ['query-loop-empty', 'post-scheduled', 'permalinks-404'],
@@ -409,7 +409,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: ['hero.special-events', 'ev.featured', 'ev.listHead', 'ev.cta'] }
     ],
-    visual: [{ diagram: 'wire-events', caption: 'Special Events page: hero, featured event, events grid, band.' }],
+    visual: [{ diagram: 'wire-events', img: 'm11-l11-wire-events.png', caption: 'Special Events page: hero, featured event, events grid, band.' }],
     resources: { assets: ['page-hero-cocktail-river', 'event-e1', 'event-e2', 'event-e3', 'event-e4', 'catering-family'] },
     expected: 'Special Events shows Palm Bar Live as the featured event, a grid of all five events, and the “Planning something special?” band. Clicking an event opens its post with date, time, place and buttons.',
     troubleshoot: ['query-loop-empty', 'post-scheduled'],
@@ -440,7 +440,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ctaSteps('gal.cta'),
       { content: 'gal.cta' }
     ],
-    visual: [{ diagram: 'wire-gallery', caption: 'Gallery page: hero, tabs, photo grid, band.' }],
+    visual: [{ diagram: 'wire-gallery', img: 'Gallery Page Wireframe.png', caption: 'Gallery page: hero, tabs, photo grid, band.' }],
     resources: { assets: ['page-hero-terrace-night'] },
     expected: 'Five tabs; each shows its photos with captions. Clicking a photo opens it large on a dark background; Esc or the X closes it.',
     troubleshoot: ['lightbox-missing', 'tabs-not-switching'],
@@ -472,7 +472,7 @@ GUIDE.modules.push({ id: 'm11', title: 'Building the Remaining Pages', summary: 
       ] },
       { content: ['con.faqHead', 'con.faq1', 'con.faq2', 'con.faq3', 'con.faq4'] }
     ],
-    visual: [{ diagram: 'wire-contact', caption: 'Contact page, top to bottom.' }],
+    visual: [{ diagram: 'wire-contact', img: 'Contact Page Wireframe.png', caption: 'Contact page, top to bottom.' }],
     resources: { assets: ['page-hero-river-table'] },
     expected: 'Contact shows the hero, a form placeholder with the Visit & call sidebar, the map and directions on beige, and four FAQ items.',
     troubleshoot: ['map-not-showing'],

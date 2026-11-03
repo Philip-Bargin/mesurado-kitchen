@@ -39,7 +39,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { callout: 'tip', title: 'Save often', text: 'Click **Save** after every section. If something goes wrong, the editor’s **Revisions** (Page tab → Revisions) let you go back to an earlier save.' }
     ],
-    visual: [{ diagram: 'home-map', caption: 'The homepage sections in order, with their background colours.' }],
+    visual: [{ diagram: 'home-map', img: 'Homepage Section Map.png', caption: 'The homepage sections in order, with their background colours.' }],
     expected: 'The Home page is open in the editor, settings are correct, and you know the order of the 11 sections.',
     checklist: ['I reviewed the 11 sections in the reference.', 'Home page settings are correct (full width, no title, transparent header).', 'I know how to rename a block in Document Overview.'] },
 
@@ -189,7 +189,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { content: 'home.reserve' }
     ],
-    visual: [{ diagram: 'dark-band', caption: 'Dark band: text and buttons left, terrace photo right.' }],
+    visual: [{ diagram: 'dark-band', img: 'Reservation Call-to-Action Band.png', caption: 'Dark band: text and buttons left, terrace photo right.' }],
     resources: { assets: ['hero-terrace-table'], content: ['home.reserve', 'site.phoneLink'], values: [['Background', '{{hex:#0e1e16}} + class `mk-dark`'], ['Eyebrow on dark', '{{hex:#d1b686}} (class `mk-eyebrow on-dark` or handled by `mk-dark`)'], ['Heading', '{{hex:#fdf9f2}}'], ['Paragraph', '{{hex:#c3bfb3}}'], ['Image', '4:3']] },
     expected: 'A deep green band across the page with light text, a gold button, an outline button, the phone line and the terrace photo on the right.',
     troubleshoot: ['dark-text-unreadable', 'button-style-wrong'],
@@ -216,7 +216,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { content: ['home.promo1', 'home.promo2', 'home.promo3'] }
     ],
-    visual: [{ diagram: 'promo-cards', caption: 'Promo card: photo, gold label, ivory title, grey text, small meta line — all on dark green.' }],
+    visual: [{ diagram: 'promo-cards', img: 'Seasonal Specials Promotional Card.png', caption: 'Promo card: photo, gold label, ivory title, grey text, small meta line — all on dark green.' }],
     resources: { assets: ['dish-s1', 'palm-wine-pour', 'dish-s3'], content: ['home.seasonalHead', 'home.promo1', 'home.promo2', 'home.promo3'], values: [['Card background', '{{hex:#19261f}}'], ['Card border', '{{hex:#34483d}}'], ['Card classes', '`mk-card mk-dark`']] },
     expected: 'An ivory section with three dark cards side by side; text on the cards is easy to read.',
     troubleshoot: ['dark-text-unreadable', 'card-images-different-heights'],
@@ -238,7 +238,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { content: ['home.gatherHead', 'home.gatherPD', 'home.gatherCat'] }
     ],
-    visual: [{ diagram: 'two-features', caption: 'Two equal columns, each with image, H3, text and button.' }],
+    visual: [{ diagram: 'two-features', img: 'Private Dining and Catering Features.png', caption: 'Two equal columns, each with image, H3, text and button.' }],
     resources: { assets: ['river-room', 'catering-wedding'], content: ['home.gatherHead', 'home.gatherPD', 'home.gatherCat'] },
     expected: 'A beige section with two equal feature columns and their buttons.',
     checklist: ['Heading texts match.', 'Left: River Room photo, “Private dining”, dark button to /private-dining/.', 'Right: wedding photo, “Catering”, gold button to /catering/.', 'Columns stack on mobile.'] },
@@ -263,7 +263,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       { content: ['home.guestsHead', 'testi.1', 'testi.2', 'testi.3'] },
       { callout: 'info', title: '“Sample review”', text: 'The detail line deliberately says “Sample review”, because these are not real customers. Keep that wording — it is honest and it matches the reference.' }
     ],
-    visual: [{ diagram: 'testimonials', caption: 'Testimonial card layout.' }],
+    visual: [{ diagram: 'testimonials', img: 'Testimonial Card Layout.png', caption: 'Testimonial card layout.' }],
     resources: { content: ['home.guestsHead', 'testi.1', 'testi.2', 'testi.3'], values: [['Stars colour', '{{hex:#a27315}}'], ['Quote', 'Playfair Display / italic, 18 px, {{hex:#242424}}'], ['Detail line', '13 px, {{hex:#68665f}}']] },
     expected: 'A centred heading and three white review cards with gold stars.',
     checklist: ['Heading is centred.', 'Three cards with five gold stars each.', 'Quotes, names and detail lines match exactly.'] },
@@ -283,7 +283,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { content: 'home.galleryHead' }
     ],
-    visual: [{ diagram: 'gallery-preview', caption: 'Four square images in a row under a heading row.' }],
+    visual: [{ diagram: 'gallery-preview', img: 'Gallery Preview Layout.png', caption: 'Four square images in a row under a heading row.' }],
     resources: { assets: ['dish-d1', 'dining-room', 'palm-wine-pour', 'dish-l1'], content: ['home.galleryHead'], values: [['Image ratio', '1:1'], ['Grid minimum column width', '{{copy:260px}}']] },
     expected: 'Four equal square photos in a row; clicking any of them opens the Gallery page.',
     checklist: ['Heading row with outline “Explore Gallery →” button.', 'Four square images in the correct order.', 'Each image links to /gallery/.', '4 across on a laptop, 2 on a tablet, 1 on a phone.'] },
@@ -309,7 +309,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { content: ['home.visit', 'site.maps', 'site.mapQuery'] }
     ],
-    visual: [{ diagram: 'visit', caption: 'Map left; details, hours table and buttons right.' }],
+    visual: [{ diagram: 'visit', img: 'Visit, Map and Opening Hours.png', caption: 'Map left; details, hours table and buttons right.' }],
     resources: { content: ['home.visit', 'site.hours', 'site.maps', 'site.mapQuery'], values: [['Map height', '{{copy:460}} px'], ['Map zoom', '15']] },
     expected: 'A map of Mamba Point on the left; on the right the address, phone and email with icons, a three-row hours table and two buttons. **Get Directions** opens Google Maps in a new tab.',
     troubleshoot: ['map-not-showing', 'info-box-pro'],
@@ -352,7 +352,7 @@ GUIDE.modules.push({ id: 'm10', title: 'Building the Homepage', summary: 'Eleven
       ] },
       { callout: 'info', title: 'No real email', text: 'Your local site cannot send real emails, and a real newsletter needs an email service. For this project, a stored entry is the correct result. More in {{lesson:m13-l01}}.' }
     ],
-    visual: [{ diagram: 'newsletter', caption: 'Newsletter section: text left, form right.' }, { shot: 'm10-l12-fluent-editor.png', caption: 'The Fluent Forms editor with Email and GDPR Agreement fields.' }],
+    visual: [{ diagram: 'newsletter', img: 'Newsletter Signup Band.png', caption: 'Newsletter section: text left, form right.' }, { shot: 'm10-l12-fluent-editor.png', img: 'Fluent Forms Newsletter Editor.png', caption: 'The Fluent Forms editor with Email and GDPR Agreement fields.' }],
     resources: { content: ['home.news', 'home.newsForm'] },
     expected: 'The homepage ends with a beige newsletter section above the footer. Submitting an email with the box ticked shows the success message, and the entry appears in Fluent Forms → Entries.',
     troubleshoot: ['form-not-submitting', 'form-styling', 'pro-feature'],

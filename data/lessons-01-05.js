@@ -44,7 +44,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'tip', title: 'Work rhythm that works', text: 'Plan two or three lessons per sitting. Before you stop, finish the checklist of the lesson you are on — it is much easier to continue later from a clean point.' }
     ],
-    visual: [{ diagram: 'guide-layout', caption: 'How this guide is laid out: top bar, sidebar with modules, and the lesson area.' }],
+    visual: [{ diagram: 'guide-layout', img: 'Student Guide Layout.png', caption: 'How this guide is laid out: top bar, sidebar with modules, and the lesson area.' }],
     expected: 'You know where the modules, resources, search and print buttons are, and you have a `Mesurado Project` folder with `assets` and `submission` inside it in your Documents.',
     troubleshoot: [{ q: 'My progress disappeared.', a: 'Progress is stored in your browser. It disappears if you use a different browser, a private/incognito window, another computer, or clear browsing data. Use the same browser each time. Your WordPress site is never affected.' }, { q: 'The Copy button does nothing.', a: 'Some browsers block copying on pages opened from a file. Select the text with your mouse and press Ctrl + C instead.' }],
     checklist: ['I can open and close a module in the sidebar.', 'I searched for “logo” and saw results.', 'I know how to save a lesson as a PDF.', 'I created the `Mesurado Project` folder with `assets` and `submission` folders inside.'] },
@@ -56,7 +56,7 @@ GUIDE.modules.push(
     body: [
       'Mesurado Kitchen & Palm Bar is a (fictional) riverside restaurant and palm-wine bar in Mamba Point, Monrovia. Your instructor designed its website as a prototype. Your job is to **rebuild it in WordPress** so it looks and works the same way.',
       { h: 'Open the reference website', steps: [
-        'Click **Open the reference website** on the course overview page, or use this link: [Mesurado reference prototype](https://claude.ai/artifact/G6vC3teatgeyNBEVwnd27V).',
+        'Click **Open the reference website** on the course overview page, or use this link: [Mesurado reference prototype](https://mesurado-kitchen-app.vercel.app/).',
         'The reference opens as a design canvas showing every page side by side. Use your mouse wheel to zoom and drag to move around. Each page has its name above it (for example **Home**, **Menu**, **Reservations**).',
         'Double-click a page (or use its full-screen option) to view it at full size and click its links and buttons.',
         'Look at the **Home** page from top to bottom. Count the sections — there are 11 between the header and the footer.',
@@ -78,8 +78,8 @@ GUIDE.modules.push(
       ] } },
       { h: 'Shared parts on every page', list: ['**Header**: logo, main menu with dropdowns, “Order Online” link, “Reserve a Table” button, cart icon. On the homepage the header sits *on top of* the hero photo (transparent).', '**Footer**: dark green with the light logo, a short description, three link columns, copyright, legal links and social icons.', '**Page hero**: a wide photo with a dark green overlay, breadcrumb, small gold label, big heading and intro text.', '**Reservation band**: a centred call-to-action used near the bottom of many pages.'] }
     ],
-    visual: [{ diagram: 'sitemap', caption: 'Site map of the reference website. Grey boxes are dropdown items in the main menu.' }, { diagram: 'home-map', caption: 'The 11 homepage sections in order. You will build each one in Module 10.' }],
-    resources: { links: ['Reference website: [Mesurado prototype](https://claude.ai/artifact/G6vC3teatgeyNBEVwnd27V)', 'Full analysis: [Website blueprint](#/blueprint)'] },
+    visual: [{ diagram: 'sitemap', img: 'Mesurado Website Sitemap.png', caption: 'Site map of the reference website. Grey boxes are dropdown items in the main menu.' }, { diagram: 'home-map', img: 'Homepage Section Map.png', caption: 'The 11 homepage sections in order. You will build each one in Module 10.' }],
+    resources: { links: ['Reference website: [Mesurado prototype](https://mesurado-kitchen-app.vercel.app/)', 'Full analysis: [Website blueprint](#/blueprint)'] },
     expected: 'You can name every page of the site, describe the header and footer, and you have seen the mobile previews.',
     troubleshoot: [{ q: 'The reference link will not open.', a: 'It needs an internet connection and a modern browser (Chrome, Edge or Firefox). If it still fails, ask your instructor for screenshots. Everything you need to build is also described in the Website blueprint and Content Library of this guide.' }],
     checklist: ['I opened the reference website.', 'I scrolled the whole Home page and counted 11 sections.', 'I looked at the mobile previews.', 'I can list the 14 pages from memory or from the table.'] },
@@ -180,7 +180,7 @@ GUIDE.modules.push(
         'Local may ask you to create a free account or log in. This is **optional** — look for a **Skip**, **Continue without an account** or **X** close button.'
       ] }
     ],
-    visual: [{ diagram: 'local-app', caption: 'The main parts of the Local window (labelled illustration — your version may look slightly different).' }, { shot: 'm02-l01-local-download.png', caption: 'The localwp.com download page with the Download button.' }],
+    visual: [{ diagram: 'local-app', img: 'LocalWP Application Anatomy.png', caption: 'The main parts of the Local window (labelled illustration — your version may look slightly different).' }, { shot: 'm02-l01-local-download.png', img: 'Download LocalWP.png', caption: 'The localwp.com download page with the Download button.' }],
     resources: { links: ['Download page: [localwp.com](https://localwp.com/)'] },
     expected: 'The Local app is open and shows an empty sites list with a **+** (Create a new site) button at the bottom left.',
     troubleshoot: ['local-wont-start', 'local-install-blocked'],
@@ -204,7 +204,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'warn', title: 'Write down your login now', text: 'You will log in many times. Record: site address `http://mesurado-kitchen.local/wp-admin`, your username and your password. If you forget them, see {{ts:forgot-login}}.' }
     ],
-    visual: [{ shot: 'm02-l02-local-setup-wordpress.png', caption: 'The “Set up WordPress” screen in Local, where you enter the username, password and email.' }],
+    visual: [{ shot: 'm02-l02-local-setup-wordpress.png', img: 'Set Up WordPress in Local.png', caption: 'The “Set up WordPress” screen in Local, where you enter the username, password and email.' }],
     resources: { values: [['Site name', '{{copy:mesurado-kitchen}}'], ['Site domain (automatic)', '`mesurado-kitchen.local`'], ['Environment', 'Preferred'], ['Multisite', 'No']] },
     expected: 'Local shows **mesurado-kitchen** in the sites list with a green running dot, and the site overview shows the domain `mesurado-kitchen.local`.',
     troubleshoot: ['local-wont-start', 'site-not-loading'],
@@ -238,7 +238,7 @@ GUIDE.modules.push(
         'Log back in now so you are ready for the next lesson.'
       ] }
     ],
-    visual: [{ diagram: 'wp-dashboard', caption: 'The WordPress dashboard: toolbar at the top, admin menu on the left, work area in the middle.' }],
+    visual: [{ diagram: 'wp-dashboard', img: 'WordPress Dashboard Anatomy.png', caption: 'The WordPress dashboard: toolbar at the top, admin menu on the left, work area in the middle.' }],
     resources: { values: [['Site address', '`http://mesurado-kitchen.local`'], ['Dashboard address', '{{copy:mesurado-kitchen.local/wp-admin}}']] },
     expected: 'You can open the website, open the dashboard, log in, move between them using the toolbar and log out.',
     troubleshoot: ['site-not-loading', 'forgot-login', 'dashboard-wont-open'],
@@ -298,7 +298,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'info', title: 'Plugins and themes add menu items', text: 'After you install Astra, Spectra, Fluent Forms and WooCommerce, new items appear in this menu (for example **Fluent Forms**, **WooCommerce**, **Products**). This is normal.' }
     ],
-    visual: [{ diagram: 'wp-dashboard', caption: 'Dashboard areas. Numbers match the explanations in the table above.' }],
+    visual: [{ diagram: 'wp-dashboard', img: 'Numbered Dashboard Tour.png', caption: 'Dashboard areas. Numbers match the explanations in the table above.' }],
     expected: 'You can find Posts, Media, Pages, Appearance, Plugins and Settings without searching.',
     checklist: ['I opened Pages → All Pages.', 'I opened Media → Library.', 'I opened Appearance → Themes and saw which theme is active.', 'I know what Screen Options does.'] },
 
@@ -342,7 +342,7 @@ GUIDE.modules.push(
         'In the right sidebar, select the **Page** tab, scroll to the bottom and click **Move to trash**. (You can also do this from **Pages → All Pages**.)'
       ] }
     ],
-    visual: [{ diagram: 'block-editor', caption: 'The Block Editor: (1) block inserter, (2) Document Overview, (3) canvas, (4) settings sidebar with Page and Block tabs, (5) save and publish.' }, { shot: 'm03-l02-block-editor.png', caption: 'The Block Editor with a heading and a paragraph selected.' }],
+    visual: [{ diagram: 'block-editor', img: 'Block Editor — Five Main Areas.png', caption: 'The Block Editor: (1) block inserter, (2) Document Overview, (3) canvas, (4) settings sidebar with Page and Block tabs, (5) save and publish.' }, { shot: 'm03-l02-block-editor.png', img: 'Editing Blocks in Gutenberg.png', caption: 'The Block Editor with a heading and a paragraph selected.' }],
     expected: 'You can add, select, move, duplicate and delete blocks, use Document Overview, and save a draft.',
     troubleshoot: ['editor-looks-different', 'changes-not-showing'],
     checklist: ['I can open the block inserter and find a block by searching.', 'I can open Document Overview and select a block from it.', 'I know the difference between the **Page** and **Block** tabs.', 'I saved a draft, previewed it and moved the practice page to the trash.'] },
@@ -409,7 +409,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'free', title: 'Ignore Astra Pro offers', text: 'Astra adds an **Astra** item to your menu with links to “Astra Pro” and “Upgrade”. Everything we use is in the free theme.' }
     ],
-    visual: [{ shot: 'm04-l01-astra-search.png', caption: 'Appearance → Themes → Add New Theme with “Astra” searched.' }],
+    visual: [{ shot: 'm04-l01-astra-search.png', img: 'm04-l01-astra-search.png', caption: 'Appearance → Themes → Add New Theme with “Astra” searched.' }],
     expected: 'Appearance → Themes shows **Astra** as the **Active** theme.',
     troubleshoot: ['theme-install-fails'],
     checklist: ['Astra is installed and active.', 'I did not install Starter Templates.', 'My site now shows the Astra header.'] },
@@ -439,7 +439,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'tip', title: 'Settings can be per page too', text: 'Astra also lets you change layout for a single page in the Block Editor. You will use that in {{lesson:m08-l03}} to hide page titles.' }
     ],
-    visual: [{ diagram: 'customizer', caption: 'The Astra Customizer: settings panels on the left, live preview on the right, Publish button at the top.' }],
+    visual: [{ diagram: 'customizer', img: 'm04-l02-customizer.png', caption: 'The Astra Customizer: settings panels on the left, live preview on the right, Publish button at the top.' }],
     resources: { values: [['Container width', '{{copy:1240}} px'], ['Container layout', 'Full Width (Stretched)'], ['Container style', 'Unboxed'], ['Sidebar', 'No Sidebar']] },
     expected: 'The Customizer shows Container Width 1240 and No Sidebar, and both are published.',
     troubleshoot: ['customizer-not-saving', 'pro-feature'],
@@ -490,7 +490,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'warn', title: 'If a block shows a padlock or “Pro”', text: 'Spectra lists some Pro blocks too. We only use Slider, Tabs, Icon List and Google Map. If your version of Spectra does not show a free Slider block, see {{ts:spectra-slider-missing}}.' }
     ],
-    visual: [{ shot: 'm05-l01-spectra-search.png', caption: 'Plugins → Add New Plugin with “Spectra” searched; check the author is Brainstorm Force.' }],
+    visual: [{ shot: 'm05-l01-spectra-search.png', img: 'm05-l01-spectra-search.png', caption: 'Plugins → Add New Plugin with “Spectra” searched; check the author is Brainstorm Force.' }],
     expected: 'Plugins → Installed Plugins lists **Spectra** as active, and the four blocks appear in the editor inserter.',
     troubleshoot: ['plugin-install-fails', 'pro-feature', 'spectra-slider-missing'],
     checklist: ['Spectra is installed and active.', 'I found the Slider, Tabs, Icon List and Google Map blocks in the inserter.', 'I skipped any onboarding offers.'] },

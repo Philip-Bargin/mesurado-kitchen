@@ -63,7 +63,7 @@ GUIDE.modules.push(
         'Type `menu-` in the **Search media** box. You should see the 22 dish and drink images.'
       ] }
     ],
-    visual: [{ shot: 'm06-l02-attachment-details.png', caption: 'The Attachment details window with the Alternative Text field.' }],
+    visual: [{ shot: 'm06-l02-attachment-details.png', img: 'm06-l02-attachment-details.png', caption: 'The Attachment details window with the Alternative Text field.' }],
     resources: { links: ['[Project Asset Library](#/assets) — copy alt text from each card'] },
     expected: 'The Media Library contains 74 images; logos and photos have alt text and the four page-hero images have none.',
     troubleshoot: ['upload-failed', 'upload-max-size', 'broken-image'],
@@ -112,7 +112,7 @@ GUIDE.modules.push(
         'Move the page to the trash (**Page** tab → **Move to trash**). The images stay in the Media Library.'
       ] }
     ],
-    visual: [{ diagram: 'aspect-ratios', caption: 'The four image shapes used in the reference and where each appears.' }],
+    visual: [{ diagram: 'aspect-ratios', img: 'm06-l03-aspect-ratios.png', caption: 'The four image shapes used in the reference and where each appears.' }],
     resources: { assets: ['dining-room', 'river', 'page-hero-dishes'], values: [['Overlay colour', '{{hex:#0e1e16}}'], ['Overlay opacity', '{{copy:62}} %'], ['Page hero minimum height', '{{copy:360}} px']] },
     expected: 'You can insert an image, change its aspect ratio, align it, replace it and use a Cover block with a dark overlay.',
     troubleshoot: ['aspect-ratio-missing', 'broken-image'],
@@ -156,7 +156,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'info', title: 'Extra colours', text: 'Four more colours are used occasionally: white `#ffffff` (cards), Ivory 50 `#fdf9f2` (text on dark), Gold 600 `#a27315` (accent borders) and `#c3bfb3` (paragraph text on dark). Type these HEX codes into a block’s colour picker when a lesson asks for them.' }
     ],
-    visual: [{ diagram: 'palette', caption: 'The Mesurado palette in Astra’s nine slots.' }],
+    visual: [{ diagram: 'palette', img: 'm07-l01-palette.png', caption: 'The Mesurado palette in Astra’s nine slots.' }],
     resources: { values: [['Overlay on hero images', '{{hex:#0e1e16}} at 62% opacity'], ['White', '{{hex:#ffffff}}'], ['Ivory 50 (text on dark)', '{{hex:#fdf9f2}}'], ['Gold 600', '{{hex:#a27315}}'], ['Paragraph on dark', '{{hex:#c3bfb3}}']] },
     expected: 'The site background turns light ivory, links turn gold-brown, and in the Block Editor every colour picker shows the nine Mesurado swatches.',
     troubleshoot: ['colors-not-applying', 'customizer-not-saving'],
@@ -224,7 +224,7 @@ GUIDE.modules.push(
       ] } },
       { callout: 'tip', title: 'Arrows on buttons', text: 'The reference shows small arrows on some buttons (“Explore Full Menu →”). Type the arrow character directly in the button text: copy it here {{copy:→}}.' }
     ],
-    visual: [{ diagram: 'buttons', caption: 'The Mesurado button styles.' }],
+    visual: [{ diagram: 'buttons', img: 'm07-l03-buttons.png', caption: 'The Mesurado button styles.' }],
     resources: { values: [['Background', '{{hex:#0e1e16}}'], ['Hover background', '{{hex:#26382f}}'], ['Text', '{{hex:#fdf9f2}}'], ['Border radius', '{{copy:6}} px'], ['Padding', '14 px top/bottom · 24 px left/right'], ['Font', 'Inter 600, 15 px']] },
     expected: 'Any new Buttons block appears dark green with ivory text and slightly rounded corners.',
     troubleshoot: ['button-style-wrong'],
@@ -261,7 +261,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'info', title: 'You will save this as a pattern', text: 'In {{lesson:m07-l06}} you save these sections as reusable patterns, so you never repeat these settings by hand. Keep this practice page as a draft until then.' }
     ],
-    visual: [{ diagram: 'section-recipe', caption: 'The section recipe: a full-width Group with 1240 px content, 96 px vertical padding and 32 px side padding.' }],
+    visual: [{ diagram: 'section-recipe', img: 'm07-l04-section-recipe.png', caption: 'The section recipe: a full-width Group with 1240 px content, 96 px vertical padding and 32 px side padding.' }],
     resources: { values: [['Content width', '{{copy:1240px}}'], ['Section padding (desktop)', '96 px top and bottom, 32 px sides'], ['Section padding (mobile)', '64 px top and bottom, 20 px sides'], ['Gap in split sections', '{{copy:64px}}'], ['Gap between cards', '{{copy:24px}}']] },
     expected: 'Your practice section shows a beige band across the full screen with the heading and text aligned to a centred column.',
     troubleshoot: ['full-width-not-working', 'spacing-wrong'],
@@ -344,7 +344,7 @@ GUIDE.modules.push(
         'Move the `Layout practice` page to the trash. The patterns are kept.'
       ] }
     ],
-    visual: [{ diagram: 'patterns', caption: 'The four patterns and their inner blocks.' }],
+    visual: [{ diagram: 'patterns', img: 'm07-l06-patterns.png', caption: 'The four patterns and their inner blocks.' }],
     expected: '**My patterns** lists MK Section, MK Split, MK Card and MK Dark Band, all unsynced.',
     troubleshoot: ['pattern-synced-by-mistake', 'create-pattern-missing'],
     checklist: ['MK Section saved (not synced).', 'MK Split saved (not synced).', 'MK Card saved (not synced).', 'MK Dark Band saved (not synced).', 'The practice page is in the trash.'] }
@@ -427,7 +427,7 @@ GUIDE.modules.push(
       ] },
       { callout: 'tip', title: 'Quick check', text: 'Visit any page. You should see the header, an empty area and the footer — no grey page title. That empty area is where you will build.' }
     ],
-    visual: [{ diagram: 'astra-page-settings', caption: 'The Astra page settings panel in the Block Editor.' }],
+    visual: [{ diagram: 'astra-page-settings', img: 'm08-l03-astra-page-settings.png', caption: 'The Astra page settings panel in the Block Editor.' }],
     resources: { values: [['Homepage displays', 'A static page'], ['Homepage', 'Home'], ['Posts page', '— Select — (none)'], ['Content layout', 'Full Width / Unboxed'], ['Sidebar', 'No Sidebar'], ['Disable title', 'Ticked on all 14 pages'], ['Transparent header', 'Enabled on Home only']] },
     expected: '`mesurado-kitchen.local/` shows the Home page, and no page shows an automatic title.',
     troubleshoot: ['homepage-wrong', 'astra-settings-missing'],

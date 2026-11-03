@@ -1,4 +1,4 @@
-/* WordPress Final Project Guide — application script.
+/* Web Design and Management Project Guide — application script.
    Plain JavaScript, no libraries, works from file:// and GitHub Pages.
    All course content lives in /data; this file only renders it. */
 (function () {
@@ -171,8 +171,15 @@
     return '<figure class="shot"><img src="' + esc(file) + '" alt="' + esc(b.alt || b.caption) + '" loading="lazy" onerror="this.outerHTML=\'<div class=&quot;shot-ph&quot; role=&quot;img&quot; aria-label=&quot;Screenshot not added yet: ' + esc(b.caption).replace(/'/g, '&#39;') + '&quot;><b>Screenshot to be added</b>' + esc(b.caption).replace(/'/g, '&#39;') + '<br><code>' + esc(file) + '</code></div>\'">' +
       '<figcaption>' + md(b.caption) + '</figcaption></figure>';
   }
+  /* Visual demonstration image from assets/vs-demo (takes priority over a drawn diagram or screenshot placeholder). */
+  function demoImg(b) {
+    var file = encodeURI('assets/vs-demo/' + b.img);
+    return '<figure class="shot demo"><a href="' + esc(file) + '" target="_blank" rel="noopener" title="Open full size in a new tab"><img src="' + esc(file) + '" alt="' + esc(b.alt || b.caption) + '" loading="lazy" decoding="async"></a>' +
+      (b.caption ? '<figcaption>' + md(b.caption) + ' <span class="demo__hint">Click the image to open it full size.</span></figcaption>' : '') + '</figure>';
+  }
   function block(b) {
     if (typeof b === 'string') return '<p>' + md(b) + '</p>';
+    if (b.img) return demoImg(b);
     if (b.steps) return '<div class="stepgroup">' + (b.h ? '<h3>' + md(b.h) + '</h3>' : '') + (b.note ? '<p>' + md(b.note) + '</p>' : '') + steps(b.steps) + '</div>';
     if (b.callout) return '<div class="callout callout--' + b.callout + '">' + (b.title ? '<strong>' + md(b.title) + '</strong>' : '') + (Array.isArray(b.text) ? b.text.map(function (p) { return '<p>' + md(p) + '</p>'; }).join('') : '<p>' + md(b.text) + '</p>') + '</div>';
     if (b.table) return (b.h ? '<h3>' + md(b.h) + '</h3>' : '') + table(b.table);
@@ -199,7 +206,7 @@
     (d.boxes || []).forEach(function (b) {
       var fill = b.fill || '#ffffff', stroke = b.stroke || '#b9b5ab', tc = b.dark ? '#fdf9f2' : (b.tc || '#1f2421');
       if (b.dark) { fill = b.fill || '#0e1e16'; stroke = b.stroke || '#0e1e16'; }
-      if (b.type === 'line') { out += '<line x1="' + b.x + '" y1="' + b.y + '" x2="' + b.x2 + '" y2="' + b.y2 + '" stroke="' + (b.stroke || '#1d5c46') + '" stroke-width="' + (b.sw || 2) + '"' + (b.arrow ? ' marker-end="url(#arr)"' : '') + '/>'; return; }
+      if (b.type === 'line') { out += '<line x1="' + b.x + '" y1="' + b.y + '" x2="' + b.x2 + '" y2="' + b.y2 + '" stroke="' + (b.stroke || '#8a6510') + '" stroke-width="' + (b.sw || 2) + '"' + (b.arrow ? ' marker-end="url(#arr)"' : '') + '/>'; return; }
       if (b.type === 'badge') { out += '<circle cx="' + b.x + '" cy="' + b.y + '" r="13" fill="#c0392b"/><text x="' + b.x + '" y="' + (b.y + 5) + '" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">' + esc(b.label) + '</text>'; return; }
       if (b.type === 'text') { out += '<text x="' + b.x + '" y="' + b.y + '" font-size="' + (b.fs || 13) + '" fill="' + (b.tc || '#59605b') + '"' + (b.anchor ? ' text-anchor="' + b.anchor + '"' : '') + (b.bold ? ' font-weight="700"' : '') + '>' + esc(b.label) + '</text>'; return; }
       out += '<rect x="' + b.x + '" y="' + b.y + '" width="' + b.w + '" height="' + b.h + '" rx="' + (b.r == null ? 6 : b.r) + '" fill="' + fill + '" stroke="' + stroke + '"' + (b.dash ? ' stroke-dasharray="6 4"' : '') + ' stroke-width="' + (b.sw || 1.5) + '"/>';
@@ -212,14 +219,14 @@
         });
       }
     });
-    out += '<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d5c46"/></marker></defs></svg>';
+    out += '<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a6510"/></marker></defs></svg>';
     return out;
   }
 
   /* ---------------- Views ---------------- */
   function view(html, title) {
     main.innerHTML = '<div class="page">' + html + '</div>';
-    document.title = (title ? title + ' · ' : '') + 'Mesurado WordPress Guide';
+    document.title = (title ? title + ' · ' : '') + 'Web Design and Management Project Guide';
     window.scrollTo(0, 0);
     main.focus({ preventScroll: true });
   }
@@ -228,23 +235,27 @@
     var t = totals();
     var next = LESSONS.find(function (l) { return !isDone(l.id); }) || LESSONS[LESSONS.length - 1];
     var mins = LESSONS.reduce(function (s, l) { return s + (parseInt(l.time, 10) || 0); }, 0);
-    var html = '<section class="hero"><div><p class="kicker">WordPress practical course · Final project</p><h1>Build the Mesurado Kitchen &amp; Palm Bar website in WordPress</h1>' +
-      '<p>This guide takes you, step by step, from an empty laptop to a finished WordPress website that matches the Mesurado reference design. Every tool is free. Follow the lessons in order, tick the checklists, and you will not need to guess.</p>' +
-      '<div class="btn-row"><a class="btn" href="#/l/' + next.id + '">' + (t.done ? 'Continue: ' + esc(next.title) : 'Start the course') + '</a><a class="btn btn--ghost" href="' + esc(G.project.referenceUrl) + '" target="_blank" rel="noopener">Open the reference website<span class="sr"> (opens in a new tab)</span></a></div></div>' +
+    var html = '<section class="hero"><div><p class="kicker">Final project · Step-by-step course</p><h1>Web Design and <em>Management</em> Project Guide</h1>' +
+      '<p class="hero__sub">Build the Mesurado Kitchen &amp; Palm Bar Website</p>' +
+      '<p>This guide takes you, step by step, from an empty laptop to a finished WordPress website that matches the Mesurado reference design — and then shows you how to keep it secure, findable and healthy. Every tool is free. Follow the lessons in order, tick the checklists, and you will not need to guess.</p>' +
+      '<div class="btn-row"><a class="btn" href="#/l/' + next.id + '">' + (t.done ? 'Continue: ' + esc(next.title) : 'Start the course') + ' →</a><a class="btn btn--ghost" href="' + esc(G.project.referenceUrl) + '" target="_blank" rel="noopener">Open the reference website<span class="sr"> (opens in a new tab)</span></a></div></div>' +
       '<div class="hero__stats"><div><b>' + MODULES.length + '</b><span>modules</span></div><div><b>' + LESSONS.length + '</b><span>step-by-step lessons</span></div><div><b>' + Math.round(mins / 60) + ' h</b><span>estimated build time</span></div><div><b>$0</b><span>cost — free tools only</span></div></div></section>';
-    html += '<h2>Your progress</h2><p>' + t.done + ' of ' + t.total + ' lessons complete (' + t.pct + '%), ' + t.mods + ' of ' + MODULES.length + ' modules finished. Progress is saved in <strong>this browser on this computer only</strong>; it does not move to other devices.</p>';
+    html += '<div class="progress-card"><div class="ring" style="--p:' + t.pct + '" role="img" aria-label="' + t.pct + '% of the course complete"><b>' + t.pct + '%</b></div><div><h3>Your progress</h3><p>' + t.done + ' of ' + t.total + ' lessons complete, ' + t.mods + ' of ' + MODULES.length + ' modules finished. Progress is saved in <strong>this browser on this computer only</strong>; it does not move to other devices.</p>' +
+      '<div class="btn-row" style="margin-top:12px"><a class="btn btn--dark btn--sm" href="#/l/' + next.id + '">' + (t.done ? 'Resume Lesson ' + lessonNum(next) : 'Begin Lesson 01.1') + '</a></div></div></div>';
+    html += '<div class="section-head"><h2>Course modules</h2><p>Work through them in order — each builds on the last.</p></div>';
     html += '<div class="modgrid">' + MODULES.map(function (m, i) {
-      var n = modDone(m), p = Math.round(n / m.lessons.length * 100);
-      return '<a class="modcard" href="#/l/' + m.lessons[0].id + '"><small>Module ' + pad(i + 1) + '</small><strong>' + esc(m.title) + '</strong><small>' + esc(m.summary) + '</small><div class="meter" aria-hidden="true"><span style="width:' + p + '%"></span></div><small>' + n + ' of ' + m.lessons.length + ' lessons</small></a>';
+      var n = modDone(m), p = Math.round(n / m.lessons.length * 100), done = n === m.lessons.length;
+      var badge = done ? 'Complete' : (m.isNew && !n ? 'New' : (n ? 'In progress' : m.lessons.length + ' lessons'));
+      return '<a class="modcard' + (done ? ' is-done' : '') + (m.isNew ? ' is-new' : '') + '" href="#/l/' + m.lessons[0].id + '"><span class="modcard__top"><span class="modcard__num">' + pad(i + 1) + '</span><span class="modcard__badge">' + badge + '</span></span><strong>' + esc(m.title) + '</strong><small>' + esc(m.summary) + '</small><div class="meter" aria-hidden="true"><span style="width:' + p + '%"></span></div><span class="modcard__foot"><span>' + n + ' of ' + m.lessons.length + ' lessons</span><span>' + p + '%</span></span></a>';
     }).join('') + '</div>';
-    html += '<h2>Course resources</h2><div class="modgrid">' +
-      res('#/blueprint', 'Website blueprint', 'Every page, section, colour and feature of the reference site, mapped to the lesson that builds it.') +
-      res('#/assets', 'Project Asset Library', (G.assets || []).length + ' logos and photos with download buttons, filenames and alt text.') +
-      res('#/content', 'Project Content Library', 'Every heading, paragraph, button label and menu item — ready to copy.') +
-      res('#/troubleshooting', 'Troubleshooting', (G.troubleshooting || []).length + ' common problems with step-by-step fixes.') +
-      res('#/rubric', 'Rubric & final checklist', 'How your project is assessed, plus the self-check you complete before submitting.') + '</div>';
+    html += '<div class="section-head"><h2>Course resources</h2><p>Reference material you will use in every module.</p></div><div class="modgrid">' +
+      res('#/blueprint', '▦', 'Website blueprint', 'Every page, section, colour and feature of the reference site, mapped to the lesson that builds it.') +
+      res('#/assets', '◧', 'Project Asset Library', (G.assets || []).length + ' logos and photos with download buttons, filenames and alt text.') +
+      res('#/content', '¶', 'Project Content Library', 'Every heading, paragraph, button label and menu item — ready to copy.') +
+      res('#/troubleshooting', '⚑', 'Troubleshooting', (G.troubleshooting || []).length + ' common problems with step-by-step fixes.') +
+      res('#/rubric', '✓', 'Rubric & final checklist', 'How your project is assessed, plus the self-check you complete before submitting.') + '</div>';
     view(html, 'Course overview');
-    function res(h, t2, d) { return '<a class="modcard" href="' + h + '"><strong>' + t2 + '</strong><small>' + d + '</small></a>'; }
+    function res(h, ic, t2, d) { return '<a class="modcard rescard" href="' + h + '"><span class="rescard__icon" aria-hidden="true">' + ic + '</span><div><strong>' + esc(t2) + '</strong><small>' + d + '</small></div></a>'; }
   }
 
   function lessonHTML(l, forPrint) {
@@ -293,7 +304,7 @@
   function lessonView(id) {
     var l = LESSON[id]; if (!l) return notFound();
     if (!state.open[l.module.id]) setModOpen(l.module.id, true);
-    view('<p class="print-only">WordPress Final Project Guide — Mesurado Kitchen &amp; Palm Bar</p>' + lessonHTML(l), lessonNum(l) + ' ' + l.title);
+    view('<p class="print-only">Web Design and Management Project Guide — Build the Mesurado Kitchen &amp; Palm Bar Website</p>' + lessonHTML(l), lessonNum(l) + ' ' + l.title);
     hint(l);
   }
   function hint(l) {
